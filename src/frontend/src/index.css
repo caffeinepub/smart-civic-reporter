@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm off-white background */
+    --background: 0.975 0.006 88;
+    --foreground: 0.18 0.025 250;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.025 250;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.025 250;
+
+    /* Deep forest teal */
+    --primary: 0.52 0.13 175;
+    --primary-foreground: 0.99 0 0;
+
+    /* Warm stone */
+    --secondary: 0.94 0.014 88;
+    --secondary-foreground: 0.25 0.03 250;
+
+    --muted: 0.935 0.01 88;
+    --muted-foreground: 0.52 0.025 250;
+
+    /* Warm amber accent */
+    --accent: 0.78 0.16 65;
+    --accent-foreground: 0.15 0.02 250;
+
+    --destructive: 0.55 0.185 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.87 0.012 88;
+    --input: 0.87 0.012 88;
+    --ring: 0.52 0.13 175;
+
+    --radius: 0.75rem;
+
+    /* Status colors */
+    --status-pending: 0.58 0.2 25;
+    --status-inprogress: 0.72 0.17 68;
+    --status-resolved: 0.58 0.16 155;
+
+    --chart-1: 0.52 0.13 175;
+    --chart-2: 0.72 0.17 68;
+    --chart-3: 0.58 0.16 155;
+    --chart-4: 0.58 0.2 25;
+    --chart-5: 0.65 0.15 280;
+
+    --sidebar: 0.975 0.006 88;
+    --sidebar-foreground: 0.18 0.025 250;
+    --sidebar-primary: 0.52 0.13 175;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.94 0.014 88;
+    --sidebar-accent-foreground: 0.25 0.03 250;
+    --sidebar-border: 0.87 0.012 88;
+    --sidebar-ring: 0.52 0.13 175;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-mesh {
+    background: radial-gradient(
+        ellipse 80% 60% at 20% 50%,
+        oklch(0.52 0.13 175 / 0.12) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 80% at 80% 20%,
+        oklch(0.78 0.16 65 / 0.1) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 70% 70% at 60% 80%,
+        oklch(0.52 0.13 175 / 0.08) 0%,
+        transparent 60%
+      ), oklch(0.975 0.006 88);
+  }
+
+  .card-shadow {
+    box-shadow: 0 1px 2px oklch(0.18 0.025 250 / 0.04), 0 4px 12px
+      oklch(0.18 0.025 250 / 0.06), 0 16px 32px oklch(0.18 0.025 250 / 0.04);
+  }
+
+  .card-shadow-hover {
+    box-shadow: 0 2px 4px oklch(0.18 0.025 250 / 0.06), 0 8px 24px
+      oklch(0.18 0.025 250 / 0.1), 0 24px 48px oklch(0.18 0.025 250 / 0.06);
+  }
+
+  .glass-card {
+    background: oklch(1 0 0 / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
